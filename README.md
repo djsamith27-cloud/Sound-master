@@ -4,16 +4,20 @@ An Android (Kotlin + Jetpack Compose) audio mastering, parametric EQ repair, AI 
 
 ---
 
-## Download APK from GitHub (සිංහල / English)
+## Download & Publish APK on GitHub (සිංහල / English)
 
-### 1. Direct APK Download (GitHub Releases / Actions)
-- **GitHub Releases**: Repository එකේ දකුණු පැත්තේ **Releases** section එකට ගොස් **`SwaraStudio-release.apk`** download කර Android දුරකථනයේ install කරන්න. *(Go to **Releases** and download `SwaraStudio-release.apk`.)*
-- **GitHub Actions (Latest Build)**: Repository එකේ **Actions** tab → **Build & Release Android APK** → නවතම workflow run එකේ **Artifacts** යටතේ **`SwaraStudio-APK`** download කරගත හැක.
-- **Create a New Release on GitHub**:
-  - Push a version tag (e.g., `git tag v1.0.0 && git push origin v1.0.0`), **or**
-  - Open **Actions → Build & Release Android APK → Run workflow**, enter a tag such as `v1.0.0`, and click **Run workflow**. The `.github/workflows/build-apk.yml` pipeline will build `SwaraStudio-release.apk` and publish it to **Releases** automatically.
+### 1. Direct APK Download (GitHub Releases)
+- Repository එකේ **Releases** section එකට ගොස් **`SwaraStudio-release.apk`** download කර Android දුරකථනයේ install කරන්න. *(Go to **Releases** and download `SwaraStudio-release.apk`.)*
 
-### 2. Download Source & Build Locally
+### 2. How to Publish a Downloadable APK on GitHub
+- **Option A — Upload APK Directly to GitHub Releases (Fastest)**:
+  1. AI Studio **Settings** මෙනුවෙන් **Generate APK** තෝරා APK ගොනුව download කරගන්න.
+  2. GitHub repository එකේ **Releases → Draft a new release** වෙත ගොස් එම `.apk` ගොනුව attach කර **Publish release** click කරන්න.
+- **Option B — Auto-Build APK with GitHub Actions**:
+  - AI Studio මගින් `.github/workflows/` ගොනු push කිරීම GitHub OAuth `workflow` සීමාව නිසා අවහිර විය හැක. එබැවින් workflow template එක `docs/github-release-workflow.yml` තුළ තබා ඇත.
+  - GitHub web UI එකේ **Add file → Create new file** මගින් `.github/workflows/build-apk.yml` සාදා `docs/github-release-workflow.yml` හි අන්තර්ගතය paste කර commit කරන්න. ඉන්පසු **Actions → Build & Release Android APK** මගින් ස්වයංක්‍රීයව APK build කර **Releases / Artifacts** හරහා download කළ හැක.
+
+### 3. Download Source & Build Locally
 - **Requirements**: JDK 21, Android SDK (API 36), Gradle 9.3.1 (or Android Studio).
 - Decode the signing keystore before building:
   ```bash
