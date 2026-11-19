@@ -2,20 +2,20 @@
 
 An Android (Kotlin + Jetpack Compose) audio mastering, parametric EQ repair, AI Lyrics Doctor, and cloud song-sync app.
 
+[![Download Swara Studio APK](https://img.shields.io/badge/Download-Swara_Studio_APK_(19_MB)-10b981?style=for-the-badge&logo=android&logoColor=white)](./apk/SwaraStudio.apk)
+
 ---
 
-## Download & Publish APK on GitHub (සිංහල / English)
+## Download App from GitHub (සිංහල / English)
 
-### 1. Direct APK Download (GitHub Releases)
-- Repository එකේ **Releases** section එකට ගොස් **`SwaraStudio-release.apk`** download කර Android දුරකථනයේ install කරන්න. *(Go to **Releases** and download `SwaraStudio-release.apk`.)*
+### 1. Direct APK Download (1-Click Install)
+- **Download File**: **[`SwaraStudio.apk`](./apk/SwaraStudio.apk)** *(Click කර **View raw** / Download button එක ඔබා Android දුරකථනයේ install කරන්න.)*
+- **Direct Raw Download (`djsamith27-cloud/Sound-master`)**: [`https://github.com/djsamith27-cloud/Sound-master/raw/main/apk/SwaraStudio.apk`](https://github.com/djsamith27-cloud/Sound-master/raw/main/apk/SwaraStudio.apk)
+- **GitHub Releases**: Repository එකේ **Releases** section එකට ගොස් **`SwaraStudio-release.apk`** ඇත්නම් එයද download කළ හැක.
 
-### 2. How to Publish a Downloadable APK on GitHub
-- **Option A — Upload APK Directly to GitHub Releases (Fastest)**:
-  1. AI Studio **Settings** මෙනුවෙන් **Generate APK** තෝරා APK ගොනුව download කරගන්න.
-  2. GitHub repository එකේ **Releases → Draft a new release** වෙත ගොස් එම `.apk` ගොනුව attach කර **Publish release** click කරන්න.
-- **Option B — Auto-Build APK with GitHub Actions**:
-  - AI Studio මගින් `.github/workflows/` ගොනු push කිරීම GitHub OAuth `workflow` සීමාව නිසා අවහිර විය හැක. එබැවින් workflow template එක `docs/github-release-workflow.yml` තුළ තබා ඇත.
-  - GitHub web UI එකේ **Add file → Create new file** මගින් `.github/workflows/build-apk.yml` සාදා `docs/github-release-workflow.yml` හි අන්තර්ගතය paste කර commit කරන්න. ඉන්පසු **Actions → Build & Release Android APK** මගින් ස්වයංක්‍රීයව APK build කර **Releases / Artifacts** හරහා download කළ හැක.
+### 2. Optional: Auto-Build APK via GitHub Actions / Releases
+- **Option A — Upload to GitHub Releases**: AI Studio **Settings → Generate APK** හෝ `./apk/SwaraStudio.apk` file එක GitHub **Releases → Draft a new release** වෙත upload කරන්න.
+- **Option B — Auto-Build Workflow**: GitHub web UI එකේ **Add file → Create new file** මගින් `.github/workflows/build-apk.yml` සාදා `docs/github-release-workflow.yml` හි අන්තර්ගතය paste කර commit කරන්න. ඉන්පසු **Actions → Build & Release Android APK** මගින් ස්වයංක්‍රීයව APK build කර **Releases / Artifacts** හරහා download කළ හැක.
 
 ### 3. Download Source & Build Locally
 - **Requirements**: JDK 21, Android SDK (API 36), Gradle 9.3.1 (or Android Studio).
