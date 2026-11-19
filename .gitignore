@@ -1,6 +1,15 @@
 *-debug.log
 .gradle/
+.kotlin/
+.build-outputs/
 app/build/
 build/
+dist-apk/
 .idea/
 *.iml
+*.apk
+*.aab
+local.properties
+.env
+debug.keystore
+.DS_Store
