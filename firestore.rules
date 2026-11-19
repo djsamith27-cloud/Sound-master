@@ -1,0 +1,105 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Global default-deny safety net
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() >= 1 && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    function isValidSong(data, userId) {
+      return data.userId is string &&
+             data.userId == userId &&
+             data.title is string &&
+             data.title.size() >= 1 &&
+             data.title.size() <= 150 &&
+             data.fileName is string &&
+             data.fileName.size() <= 200 &&
+             data.lyrics is string &&
+             data.lyrics.size() <= 20000 &&
+             data.lyricsSummary is string &&
+             data.lyricsSummary.size() <= 2000 &&
+             data.durationSec is number &&
+             data.durationSec >= 0 &&
+             data.durationSec <= 86400 &&
+             data.sampleRate is int &&
+             data.sampleRate >= 0 &&
+             data.sampleRate <= 384000;
+    }
+
+    match /users/{userId}/songs/{songId} {
+      allow get: if isOwner(userId) && isValidId(songId);
+      allow list: if isOwner(userId);
+
+      allow create: if isOwner(userId) &&
+                       isValidId(songId) &&
+                       incoming().keys().hasAll([
+                         'userId',
+                         'title',
+                         'fileName',
+                         'lyrics',
+                         'lyricsSummary',
+                         'durationSec',
+                         'sampleRate',
+                         'createdAt',
+                         'updatedAt'
+                       ]) &&
+                       incoming().keys().hasOnly([
+                         'userId',
+                         'title',
+                         'fileName',
+                         'lyrics',
+                         'lyricsSummary',
+                         'durationSec',
+                         'sampleRate',
+                         'createdAt',
+                         'updatedAt'
+                       ]) &&
+                       incoming().createdAt is timestamp &&
+                       incoming().createdAt <= request.time &&
+                       incoming().updatedAt is timestamp &&
+                       incoming().updatedAt <= request.time &&
+                       isValidSong(incoming(), userId);
+
+      allow update: if isOwner(userId) &&
+                       isValidId(songId) &&
+                       isValidSong(incoming(), userId) &&
+                       incoming().userId == existing().userId &&
+                       incoming().createdAt == existing().createdAt &&
+                       incoming().updatedAt is timestamp &&
+                       incoming().updatedAt <= request.time &&
+                       incoming().diff(existing()).affectedKeys().hasOnly([
+                         'title',
+                         'fileName',
+                         'lyrics',
+                         'lyricsSummary',
+                         'durationSec',
+                         'sampleRate',
+                         'updatedAt'
+                       ]);
+
+      allow delete: if isOwner(userId) && isValidId(songId);
+    }
+  }
+}

@@ -1,0 +1,6 @@
+*-debug.log
+.gradle/
+app/build/
+build/
+.idea/
+*.iml

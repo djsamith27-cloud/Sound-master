@@ -1,0 +1,68 @@
+{
+  "entities": {
+    "SongDocument": {
+      "title": "SongDocument",
+      "description": "A user's mastered song project storing track metadata and modified lyrics.",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "Owner Firebase Auth UID matching request.auth.uid"
+        },
+        "title": {
+          "type": "string",
+          "description": "Display title of the song project (1..150 chars)"
+        },
+        "fileName": {
+          "type": "string",
+          "description": "Original audio file name (0..200 chars)"
+        },
+        "lyrics": {
+          "type": "string",
+          "description": "Current or modified song lyrics text (0..20000 chars)"
+        },
+        "lyricsSummary": {
+          "type": "string",
+          "description": "Summary of lyric corrections applied (0..2000 chars)"
+        },
+        "durationSec": {
+          "type": "number",
+          "description": "Track duration in seconds (0..86400)"
+        },
+        "sampleRate": {
+          "type": "integer",
+          "description": "Audio sample rate in Hz (0..384000)"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Creation timestamp written with FieldValue.serverTimestamp()"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Last modification timestamp written with FieldValue.serverTimestamp()"
+        }
+      },
+      "required": [
+        "userId",
+        "title",
+        "fileName",
+        "lyrics",
+        "lyricsSummary",
+        "durationSec",
+        "sampleRate",
+        "createdAt",
+        "updatedAt"
+      ]
+    }
+  },
+  "firestore": {
+    "/users/{userId}/songs/{songId}": {
+      "schema": {
+        "$ref": "#/entities/SongDocument"
+      },
+      "description": "User-owned song documents containing audio metadata and saved lyrics."
+    }
+  }
+}

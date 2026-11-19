@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Outer subtle studio ring -->
+    <path
+        android:pathData="M54,26 A28,28 0 1,1 53.99,26 Z"
+        android:strokeWidth="2.5"
+        android:strokeColor="#334155"
+        android:fillColor="#00000000" />
+    <!-- 5 Bold Mastering Spectrum Bars centered in 66dp safe zone -->
+    <path
+        android:fillColor="#F59E0B"
+        android:pathData="M34,47 h5 a2.5,2.5 0 0 1 2.5,2.5 v9 a2.5,2.5 0 0 1 -2.5,2.5 h-5 a2.5,2.5 0 0 1 -2.5,-2.5 v-9 a2.5,2.5 0 0 1 2.5,-2.5 z" />
+    <path
+        android:fillColor="#FBBF24"
+        android:pathData="M43,39 h5 a2.5,2.5 0 0 1 2.5,2.5 v25 a2.5,2.5 0 0 1 -2.5,2.5 h-5 a2.5,2.5 0 0 1 -2.5,-2.5 v-25 a2.5,2.5 0 0 1 2.5,-2.5 z" />
+    <path
+        android:fillColor="#FEF3C7"
+        android:pathData="M51.5,33 h5 a2.5,2.5 0 0 1 2.5,2.5 v37 a2.5,2.5 0 0 1 -2.5,2.5 h-5 a2.5,2.5 0 0 1 -2.5,-2.5 v-37 a2.5,2.5 0 0 1 2.5,-2.5 z" />
+    <path
+        android:fillColor="#F59E0B"
+        android:pathData="M60,41 h5 a2.5,2.5 0 0 1 2.5,2.5 v21 a2.5,2.5 0 0 1 -2.5,2.5 h-5 a2.5,2.5 0 0 1 -2.5,-2.5 v-21 a2.5,2.5 0 0 1 2.5,-2.5 z" />
+    <path
+        android:fillColor="#10B981"
+        android:pathData="M69,48 h5 a2.5,2.5 0 0 1 2.5,2.5 v7 a2.5,2.5 0 0 1 -2.5,2.5 h-5 a2.5,2.5 0 0 1 -2.5,-2.5 v-7 a2.5,2.5 0 0 1 2.5,-2.5 z" />
+</vector>

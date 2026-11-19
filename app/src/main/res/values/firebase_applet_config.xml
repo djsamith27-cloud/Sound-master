@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<resources>
+    <string name="firestore_database_id" translatable="false">ai-studio-android-soundmas-18003515-1ddd-4860-b867-7117a5545e3d</string>
+    <string name="recaptcha_site_key" translatable="false">6LfSJyguAAAAAFnSEyF9zKqSPWprCUhjqxy5NWS7</string>
+</resources>

@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Swara Studio</string>
+    <string name="cd_upload_audio">Upload audio song</string>
+    <string name="cd_toggle_language">Toggle Sinhala and English language</string>
+    <string name="cd_play_pause">Play or pause audio</string>
+    <string name="cd_export_wav">Export mastered WAV file</string>
+    <string name="cd_waveform">Interactive audio waveform scrubber</string>
+    <string name="cd_spectrum">Live frequency spectrum analyzer</string>
+</resources>
