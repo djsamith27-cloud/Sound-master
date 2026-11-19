@@ -7,8 +7,6 @@ build/
 dist-apk/
 .idea/
 *.iml
-*.apk
-!apk/SwaraStudio.apk
 *.aab
 local.properties
 .env

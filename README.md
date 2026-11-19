@@ -2,15 +2,15 @@
 
 An Android (Kotlin + Jetpack Compose) audio mastering, parametric EQ repair, AI Lyrics Doctor, and cloud song-sync app.
 
-[![Download Swara Studio APK](https://img.shields.io/badge/Download-Swara_Studio_APK_(19_MB)-10b981?style=for-the-badge&logo=android&logoColor=white)](./apk/SwaraStudio.apk)
+[![Download Swara Studio APK](https://img.shields.io/badge/Download-Swara_Studio_APK_(19_MB)-10b981?style=for-the-badge&logo=android&logoColor=white)](./apk/SwaraStudio.apk?raw=true)
 
 ---
 
 ## Download App from GitHub (සිංහල / English)
 
 ### 1. Direct APK Download (1-Click Install)
-- **Download File**: **[`SwaraStudio.apk`](./apk/SwaraStudio.apk)** *(Click කර **View raw** / Download button එක ඔබා Android දුරකථනයේ install කරන්න.)*
-- **Direct Raw Download (`djsamith27-cloud/Sound-master`)**: [`https://github.com/djsamith27-cloud/Sound-master/raw/main/apk/SwaraStudio.apk`](https://github.com/djsamith27-cloud/Sound-master/raw/main/apk/SwaraStudio.apk)
+- **Direct Download**: **[`Download SwaraStudio.apk`](./apk/SwaraStudio.apk?raw=true)** *(Click කළ විට සෘජුවම APK එක download වේ.)*
+- **View File on GitHub**: **[`apk/SwaraStudio.apk`](./apk/SwaraStudio.apk)** *(File පිටුවේ ඇති **View raw** / Download button එක click කර Android දුරකථනයේ install කරන්න.)*
 - **GitHub Releases**: Repository එකේ **Releases** section එකට ගොස් **`SwaraStudio-release.apk`** ඇත්නම් එයද download කළ හැක.
 
 ### 2. Optional: Auto-Build APK via GitHub Actions / Releases
